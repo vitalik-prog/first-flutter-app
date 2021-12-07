@@ -6,6 +6,7 @@ void main() {
 
 class MyStatelessWidget extends StatelessWidget {
   const MyStatelessWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,16 +17,22 @@ class MyStatelessWidget extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.grey[900],
         ),
-        body: const Text(
-          "Hello world!!!",
-          style: TextStyle(
-              fontSize: 20,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.underline,
-              letterSpacing: 3,
-              color: Colors.grey,
-              fontFamily: "Notable"),
+        body: RichText(
+          text: const TextSpan(
+              style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.black,
+                  fontFamily: "Notable"),
+              children: <TextSpan>[
+                TextSpan(text: 'Hello '),
+                TextSpan(style: TextStyle(color: Colors.red), children: <TextSpan>[
+                  TextSpan(text: 'New '),
+                  TextSpan(text: 'Big '),
+                  TextSpan(text: 'World ', style: TextStyle(decoration: TextDecoration.underline)),
+                ]),
+                TextSpan(text: '!!'),
+              ]),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {},
@@ -37,4 +44,3 @@ class MyStatelessWidget extends StatelessWidget {
     );
   }
 }
-
