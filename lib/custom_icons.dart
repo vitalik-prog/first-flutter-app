@@ -9,7 +9,7 @@
 ///   fonts:
 ///    - family:  MyFlutterApp
 ///      fonts:
-///       - asset: fonts/MyFlutterApp.ttf
+///       - asset: fonts/CustomIcons.ttf
 ///
 /// 
 /// * Material Design Icons, Copyright (C) Google, Inc
@@ -19,10 +19,10 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class MyFlutterApp {
-  MyFlutterApp._();
+class CustomIcons {
+  CustomIcons._();
 
-  static const _kFontFam = 'MyFlutterApp';
+  static const _kFontFam = 'CustomIcons';
   static const String? _kFontPkg = null;
 
   static const IconData brightness_high = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
