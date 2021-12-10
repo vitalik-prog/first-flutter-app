@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:first_flutter_app/custom_icons.dart';
 
 void main() {
   runApp(const MyStatelessWidget());
@@ -44,6 +45,18 @@ class MyStatelessWidget extends StatelessWidget {
                       TextSpan(text: '!!!'),
                     ]),
 
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 20.0),
+              child: IconButton(
+                onPressed: () => { print('Button pressed') },
+                iconSize: 100,
+                color: Colors.yellow,
+                icon: const Icon(
+                  Icons.search,
+                  size: 50,
+                ),
               ),
             ),
             Container(
