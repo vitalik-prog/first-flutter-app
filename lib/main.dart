@@ -61,6 +61,18 @@ class MyStatelessWidget extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
+              child: IconButton(
+                onPressed: () => { print('Button pressed') },
+                iconSize: 100,
+                color: Colors.yellow,
+                icon: const Icon(
+                  CustomIcons.brightness_high,
+                  size: 50,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 20.0),
               child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
             ),
             Container(
