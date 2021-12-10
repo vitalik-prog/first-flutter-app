@@ -77,6 +77,9 @@ flutter:
     - family: Notable
       fonts:
         - asset: assets/fonts/Notable-Regular.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
 
   #
   # For details regarding fonts from package dependencies,
