@@ -66,6 +66,27 @@ class MyStatelessWidget extends StatelessWidget {
                 ),
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Container(
+                  color: Colors.blueAccent,
+                  padding: const EdgeInsets.all(30),
+                  child: const Text('1'),
+                ),
+                Container(
+                  color: Colors.orangeAccent,
+                  padding: const EdgeInsets.all(40),
+                  child: const Text('2'),
+                ),
+                Container(
+                  color: Colors.purpleAccent,
+                  padding: const EdgeInsets.all(50),
+                  child: const Text('3'),
+                ),
+              ],
+            ),
             Container(
                 margin: const EdgeInsets.only(bottom: 20.0),
                 decoration: BoxDecoration(
