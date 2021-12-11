@@ -49,31 +49,53 @@ class MyStatelessWidget extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-              child: IconButton(
-                onPressed: () => { print('Button pressed') },
-                iconSize: 100,
-                color: Colors.yellow,
-                icon: const Icon(
-                  Icons.search,
-                  size: 50,
+              color: Colors.black12,
+              child: Align(
+                child: IconButton(
+                  onPressed: () => { print('Button pressed') },
+                  iconSize: 100,
+                  color: Colors.yellow,
+                  icon: const Icon(
+                    Icons.search,
+                    size: 50,
+                  ),
                 ),
-              ),
+                alignment: Alignment.centerRight,
+              )
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-              child: IconButton(
-                onPressed: () => { print('Button pressed') },
-                iconSize: 100,
-                color: Colors.yellow,
-                icon: const Icon(
-                  CustomIcons.brightness_high,
-                  size: 50,
-                ),
+                color: Colors.black12,
+               transform: Matrix4.rotationZ(0.05),
+               child: Align(
+                 child: IconButton(
+                   onPressed: () => { print('Button pressed') },
+                   iconSize: 100,
+                   color: Colors.yellow,
+                   icon: const Icon(
+                     CustomIcons.brightness_high,
+                     size: 50,
+                   ),
+                 ),
+                 alignment: Alignment.bottomLeft,
+               ),
               ),
-            ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-              child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
+                color: Colors.black12,
+              height: 250,
+              child: Align(
+                child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
+                alignment: const Alignment(0.5, -0.5),
+              )
+            ),
+            Container(
+                margin: const EdgeInsets.only(bottom: 20.0),
+                color: Colors.black12,
+                height: 250,
+                child: Center(
+                  child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
+                )
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
