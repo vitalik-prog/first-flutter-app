@@ -49,7 +49,22 @@ class MyStatelessWidget extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-              color: Colors.black12,
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    spreadRadius: 5,
+                    blurRadius: 10,
+                    offset: Offset(4, 3)
+                  )
+                ],
+                color: Colors.green,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  width: 5,
+                  color: Colors.red
+                )
+              ),
               child: Align(
                 child: IconButton(
                   onPressed: () => { print('Button pressed') },
@@ -60,13 +75,22 @@ class MyStatelessWidget extends StatelessWidget {
                     size: 50,
                   ),
                 ),
-                alignment: Alignment.centerRight,
+                alignment: Alignment.center,
               )
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-                color: Colors.black12,
                transform: Matrix4.rotationZ(0.05),
+               decoration: BoxDecoration(
+                 borderRadius: BorderRadius.circular(50),
+                 color: Colors.black12,
+                 gradient: const LinearGradient(
+                   colors: [
+                     Colors.red,
+                     Colors.black
+                   ]
+                 )
+               ),
                child: Align(
                  child: IconButton(
                    onPressed: () => { print('Button pressed') },
@@ -82,7 +106,13 @@ class MyStatelessWidget extends StatelessWidget {
               ),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
-                color: Colors.black12,
+              decoration: const BoxDecoration(
+                  color: Colors.black12,
+                image: DecorationImage(
+                  image: AssetImage('assets/img/podcast1.jpg'),
+                  fit: BoxFit.cover
+                )
+              ),
               height: 250,
               child: Align(
                 child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
