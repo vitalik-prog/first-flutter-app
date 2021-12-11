@@ -67,7 +67,7 @@ class MyStatelessWidget extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
@@ -75,10 +75,16 @@ class MyStatelessWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(30),
                   child: const Text('1'),
                 ),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
                   color: Colors.orangeAccent,
                   padding: const EdgeInsets.all(40),
                   child: const Text('2'),
+                ),
+                const SizedBox(
+                  width: 60,
                 ),
                 Container(
                   color: Colors.purpleAccent,
