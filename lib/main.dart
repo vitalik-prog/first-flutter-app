@@ -44,94 +44,108 @@ class MyStatelessWidget extends StatelessWidget {
                           ]),
                       TextSpan(text: '!!!'),
                     ]),
-
               ),
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Container(
+                  color: Colors.blueAccent,
+                  padding: const EdgeInsets.all(30),
+                  child: const Text('1'),
+                ),
+                Container(
+                  color: Colors.orangeAccent,
+                  padding: const EdgeInsets.all(40),
+                  child: const Text('2'),
+                ),
+                Container(
+                  color: Colors.purpleAccent,
+                  padding: const EdgeInsets.all(50),
+                  child: const Text('3'),
+                ),
+              ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(bottom: 20.0),
+                decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black,
+                          spreadRadius: 5,
+                          blurRadius: 10,
+                          offset: Offset(4, 3))
+                    ],
+                    color: Colors.green,
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 5, color: Colors.red)),
+                child: Align(
+                  child: IconButton(
+                    onPressed: () => {print('Button pressed')},
+                    iconSize: 100,
+                    color: Colors.yellow,
+                    icon: const Icon(
+                      Icons.search,
+                      size: 50,
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                )),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
+              transform: Matrix4.rotationZ(0.05),
               decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black,
-                    spreadRadius: 5,
-                    blurRadius: 10,
-                    offset: Offset(4, 3)
-                  )
-                ],
-                color: Colors.green,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  width: 5,
-                  color: Colors.red
-                )
-              ),
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.black12,
+                  gradient:
+                      const LinearGradient(colors: [Colors.red, Colors.black])),
               child: Align(
                 child: IconButton(
-                  onPressed: () => { print('Button pressed') },
+                  onPressed: () => {print('Button pressed')},
                   iconSize: 100,
                   color: Colors.yellow,
                   icon: const Icon(
-                    Icons.search,
+                    CustomIcons.brightness_high,
                     size: 50,
                   ),
                 ),
-                alignment: Alignment.center,
-              )
+                alignment: Alignment.bottomLeft,
+              ),
             ),
             Container(
-              margin: const EdgeInsets.only(bottom: 20.0),
-               transform: Matrix4.rotationZ(0.05),
-               decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(50),
-                 color: Colors.black12,
-                 gradient: const LinearGradient(
-                   colors: [
-                     Colors.red,
-                     Colors.black
-                   ]
-                 )
-               ),
-               child: Align(
-                 child: IconButton(
-                   onPressed: () => { print('Button pressed') },
-                   iconSize: 100,
-                   color: Colors.yellow,
-                   icon: const Icon(
-                     CustomIcons.brightness_high,
-                     size: 50,
-                   ),
-                 ),
-                 alignment: Alignment.bottomLeft,
-               ),
-              ),
-            Container(
-              margin: const EdgeInsets.only(bottom: 20.0),
-              decoration: const BoxDecoration(
-                  color: Colors.black12,
-                image: DecorationImage(
-                  image: AssetImage('assets/img/podcast1.jpg'),
-                  fit: BoxFit.cover
-                )
-              ),
-              height: 250,
-              child: Align(
-                child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
-                alignment: const Alignment(0.5, -0.5),
-              )
-            ),
+                margin: const EdgeInsets.only(bottom: 20.0),
+                decoration: const BoxDecoration(
+                    color: Colors.black12,
+                    image: DecorationImage(
+                        image: AssetImage('assets/img/podcast1.jpg'),
+                        fit: BoxFit.cover)),
+                height: 250,
+                child: Align(
+                  child: SvgPicture.asset(
+                    'assets/img/play.svg',
+                    alignment: Alignment.bottomCenter,
+                  ),
+                  alignment: const Alignment(0.5, -0.5),
+                )),
             Container(
                 margin: const EdgeInsets.only(bottom: 20.0),
                 color: Colors.black12,
                 height: 250,
                 child: Center(
-                  child: SvgPicture.asset('assets/img/play.svg', alignment: Alignment.bottomCenter,),
-                )
-            ),
+                  child: SvgPicture.asset(
+                    'assets/img/play.svg',
+                    alignment: Alignment.bottomCenter,
+                  ),
+                )),
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
               child: Image.network('https://source.unsplash.com/random/'),
             ),
-            Image.asset('assets/img/podcast5.jpg', width: 100, height: 100,),
+            Image.asset(
+              'assets/img/podcast5.jpg',
+              width: 100,
+              height: 100,
+            ),
             const Image(
               image: AssetImage('assets/img/podcast1.jpg'),
             ),
