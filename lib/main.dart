@@ -196,14 +196,77 @@ class MyStatelessWidget extends StatelessWidget {
                     child: const Text('2'),
                   ),
                   Positioned(
-                    top: 20,
+                      top: 20,
                       left: 40,
                       child: Container(
-                    color: Colors.purpleAccent,
-                    padding: const EdgeInsets.all(50),
-                    child: const Text('3'),
-                  ))
+                        color: Colors.purpleAccent,
+                        padding: const EdgeInsets.all(50),
+                        child: const Text('3'),
+                      ))
                 ],
+              ),
+            ),
+            Center(
+              child: Container(
+                color: Colors.lightGreen,
+                width: 400,
+                height: 400,
+                child: Wrap(
+                  spacing: 20,
+                  runSpacing: 20,
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.blueAccent,
+                      padding: const EdgeInsets.all(150),
+                      child: const Text(
+                        '1',
+                        style: TextStyle(color: Colors.black87),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.orangeAccent,
+                      padding: const EdgeInsets.all(100),
+                      child: const Text(
+                        '2',
+                        style: TextStyle(color: Colors.black87),
+                      ),
+                    ),
+                    Container(
+                      width: 300,
+                      height: 100,
+                      color: Colors.purpleAccent,
+                      padding: const EdgeInsets.all(50),
+                      child: const Text(
+                        '3',
+                        style: TextStyle(color: Colors.black87),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.black12,
+                      padding: const EdgeInsets.all(50),
+                      child: const Text(
+                        '4',
+                        style: TextStyle(color: Colors.black87),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.white54,
+                      padding: const EdgeInsets.all(50),
+                      child: const Text(
+                        '5',
+                        style: TextStyle(color: Colors.black87),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
