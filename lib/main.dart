@@ -63,7 +63,7 @@ class MyStatelessWidget extends StatelessWidget {
                   color: Colors.purpleAccent,
                   padding: const EdgeInsets.all(50),
                   child: const Text('3'),
-                ),
+                )
               ],
             ),
             Row(
@@ -86,11 +86,13 @@ class MyStatelessWidget extends StatelessWidget {
                 const SizedBox(
                   width: 60,
                 ),
-                Container(
+                Expanded(
+                  child: Container(
                   color: Colors.purpleAccent,
                   padding: const EdgeInsets.all(50),
                   child: const Text('3'),
                 ),
+                )
               ],
             ),
             Container(
