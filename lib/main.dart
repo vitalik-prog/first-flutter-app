@@ -88,10 +88,10 @@ class MyStatelessWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                  color: Colors.purpleAccent,
-                  padding: const EdgeInsets.all(50),
-                  child: const Text('3'),
-                ),
+                    color: Colors.purpleAccent,
+                    padding: const EdgeInsets.all(50),
+                    child: const Text('3'),
+                  ),
                 )
               ],
             ),
@@ -178,6 +178,34 @@ class MyStatelessWidget extends StatelessWidget {
             const Image(
               image: AssetImage('assets/img/podcast1.jpg'),
             ),
+            Container(
+              width: 500,
+              height: 500,
+              color: Colors.grey,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    color: Colors.blueAccent,
+                    padding: const EdgeInsets.all(150),
+                    child: const Text('1'),
+                  ),
+                  Container(
+                    color: Colors.orangeAccent,
+                    padding: const EdgeInsets.all(100),
+                    child: const Text('2'),
+                  ),
+                  Positioned(
+                    top: 20,
+                      left: 40,
+                      child: Container(
+                    color: Colors.purpleAccent,
+                    padding: const EdgeInsets.all(50),
+                    child: const Text('3'),
+                  ))
+                ],
+              ),
+            )
           ],
         ),
         floatingActionButton: FloatingActionButton(
