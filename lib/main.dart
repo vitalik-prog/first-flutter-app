@@ -348,9 +348,41 @@ class MyStatelessWidget extends StatelessWidget {
                         ],
                       )
                     ],
-                // "$index  ${events2[index].name}  ${events2[index].location} ${events2[index].startDateTime}",
-                // style: const TextStyle(fontSize: 20),
               )),
+              separatorBuilder: (_, __) => const Divider(
+                color: Colors.red,
+                thickness: 10,
+              ),
+            ),
+            const Divider(
+              color: Colors.black87,
+              thickness: 15,
+            ),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              padding: const EdgeInsets.all(40),
+              itemCount: events.length,
+              itemBuilder: (_, index) => Card(
+                  color: Colors.cyan,
+                  elevation: 10,
+                  shadowColor: Colors.purple,
+                  margin: const EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    title: Text(events2[index].name, style: const TextStyle(fontSize: 30)),
+                    subtitle: Text("${events2[index].location} ${events2[index].startDateTime}", style: const TextStyle(fontSize: 15)),
+                    leading: const Icon(
+                      Icons.local_activity,
+                      size: 40,
+                    ),
+                    trailing: const IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: null,
+                    ),
+                    onTap: () => print("${events2[index].name}  tap"),
+                    onLongPress: () => print("${events2[index].name}  longPress"),
+                  )),
               separatorBuilder: (_, __) => const Divider(
                 color: Colors.red,
                 thickness: 10,
