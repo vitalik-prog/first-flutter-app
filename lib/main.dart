@@ -1,13 +1,14 @@
+import 'package:first_flutter_app/events.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:first_flutter_app/custom_icons.dart';
 
 void main() {
-  runApp(const MyStatelessWidget());
+  runApp(MyStatelessWidget());
 }
 
 class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({Key? key}) : super(key: key);
+  MyStatelessWidget({Key? key}) : super(key: key);
 
   final List<String> events = const [
     'Event 1',
@@ -19,6 +20,18 @@ class MyStatelessWidget extends StatelessWidget {
     'Event 7',
     'Event 8',
     'Event 9',
+  ];
+
+  final List<Events> events2 = [
+    Events(name: 'Event 1', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(name: 'Event 2', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(name: 'Event 3', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(name: 'Event 4', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(name: 'Event 5', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(name: 'Event 6', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(name: 'Event 7', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(name: 'Event 8', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(name: 'Event 9', location: 'Location 1', startDateTime: DateTime.now()),
   ];
 
   @override
@@ -299,6 +312,24 @@ class MyStatelessWidget extends StatelessWidget {
                 thickness: 10,
               ),
               ),
+            const Divider(
+              color: Colors.black87,
+              thickness: 15,
+            ),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              padding: const EdgeInsets.all(40),
+              itemCount: events.length,
+              itemBuilder: (_, index) => Text(
+                "$index  ${events2[index].name}  ${events2[index].location} ${events2[index].startDateTime}",
+                style: const TextStyle(fontSize: 20),
+              ),
+              separatorBuilder: (_, __) => const Divider(
+                color: Colors.red,
+                thickness: 10,
+              ),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
