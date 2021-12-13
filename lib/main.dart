@@ -23,15 +23,24 @@ class MyStatelessWidget extends StatelessWidget {
   ];
 
   final List<Events> events2 = [
-    Events(name: 'Event 1', location: 'Location 1', startDateTime: DateTime.now()),
-    Events(name: 'Event 2', location: 'Location 2', startDateTime: DateTime.now()),
-    Events(name: 'Event 3', location: 'Location 2', startDateTime: DateTime.now()),
-    Events(name: 'Event 4', location: 'Location 2', startDateTime: DateTime.now()),
-    Events(name: 'Event 5', location: 'Location 1', startDateTime: DateTime.now()),
-    Events(name: 'Event 6', location: 'Location 2', startDateTime: DateTime.now()),
-    Events(name: 'Event 7', location: 'Location 1', startDateTime: DateTime.now()),
-    Events(name: 'Event 8', location: 'Location 2', startDateTime: DateTime.now()),
-    Events(name: 'Event 9', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 1', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 2', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 3', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 4', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 5', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 6', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 7', location: 'Location 1', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 8', location: 'Location 2', startDateTime: DateTime.now()),
+    Events(
+        name: 'Event 9', location: 'Location 1', startDateTime: DateTime.now()),
   ];
 
   @override
@@ -153,8 +162,8 @@ class MyStatelessWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.black12,
-                      gradient:
-                      const LinearGradient(colors: [Colors.red, Colors.black])),
+                      gradient: const LinearGradient(
+                          colors: [Colors.red, Colors.black])),
                   child: Align(
                     child: IconButton(
                       onPressed: () => {print('Button pressed')},
@@ -299,19 +308,19 @@ class MyStatelessWidget extends StatelessWidget {
               ],
             ),
             ListView.separated(
-                shrinkWrap: true,
-                physics: const ScrollPhysics(),
-                padding: const EdgeInsets.all(40),
-                itemCount: events.length,
-                itemBuilder: (_, index) => Text(
-                  events[index],
-                  style: const TextStyle(fontSize: 100),
-                ),
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              padding: const EdgeInsets.all(40),
+              itemCount: events.length,
+              itemBuilder: (_, index) => Text(
+                events[index],
+                style: const TextStyle(fontSize: 100),
+              ),
               separatorBuilder: (_, __) => const Divider(
                 color: Colors.red,
                 thickness: 10,
               ),
-              ),
+            ),
             const Divider(
               color: Colors.black87,
               thickness: 15,
@@ -321,10 +330,27 @@ class MyStatelessWidget extends StatelessWidget {
               physics: const ScrollPhysics(),
               padding: const EdgeInsets.all(40),
               itemCount: events.length,
-              itemBuilder: (_, index) => Text(
-                "$index  ${events2[index].name}  ${events2[index].location} ${events2[index].startDateTime}",
-                style: const TextStyle(fontSize: 20),
-              ),
+              itemBuilder: (_, index) => Card(
+                color: Colors.cyan,
+                  elevation: 10,
+                  shadowColor: Colors.purple,
+                  margin: const EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    children: [
+                      Text(events2[index].name, style: const TextStyle(fontSize: 30)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(events2[index].location, style: const TextStyle(fontSize: 15)),
+                          const SizedBox(width: 10),
+                          Text(events2[index].startDateTime.toString(), style: const TextStyle(fontSize: 15)),
+                        ],
+                      )
+                    ],
+                // "$index  ${events2[index].name}  ${events2[index].location} ${events2[index].startDateTime}",
+                // style: const TextStyle(fontSize: 20),
+              )),
               separatorBuilder: (_, __) => const Divider(
                 color: Colors.red,
                 thickness: 10,
